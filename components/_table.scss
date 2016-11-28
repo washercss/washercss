@@ -1,0 +1,61 @@
+$tbl-color: #ddd !default;
+
+// Light and clean table class
+.tbl {
+  text-align: left;
+  @extend .margin-auto;
+
+  tr {
+    border-bottom: 1px solid $tbl-color;
+  }
+
+  td, th {
+    @extend .padding-small;
+  }
+
+  &__th--min-width {
+    min-width: 90px;
+  }
+
+  &--alternate-colors {
+    tr {
+      border: none;
+    }
+    thead tr {
+      background-color: darken($tbl-color, 10%);
+    }
+    tbody tr:nth-child(even) {
+      background-color: $tbl-color;
+    }
+  }
+  &--reverse-colors-lighten {
+    thead tr {
+      background-color: lighten($tbl-color, 100%);
+    }
+
+    tr {
+      border-bottom: 2px solid white;
+    }
+  }
+
+}
+
+.tbl-borders--white{
+  border: solid 2px white;
+  border-left: none;
+  border-bottom: none;
+  tr{
+    border-bottom: solid 2px white;
+  }
+  td, th{
+    border-left: solid 2px white;
+  }
+}
+
+.tbl__cell-small{
+  width: 90px;
+}
+
+.tbl__cell--third{
+  width: 33%;
+}

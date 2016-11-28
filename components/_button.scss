@@ -1,0 +1,91 @@
+// This is the basic button class (ex : .btn)
+/**
+ * 1. Allow us to style box model properties.
+ * 2. Line different sized buttons up a little nicer.
+ * 3. Make buttons inherit font styles (often necessary when styling `input`s as
+ *    buttons).
+ * 4. Reset/normalize some styles.
+ * 5. Force all button-styled elements to appear clickable.
+ */
+.btn {
+  display: inline-block; /* [1] */
+  vertical-align: middle; /* [2] */
+  font: inherit; /* [3] */
+  text-align: center; /* [4] */
+  margin: 0; /* [4] */
+  cursor: pointer; /* [5] */
+  @extend .padding-horizontal;
+  @extend .padding-vertical-small;
+  transition: none;
+  border-radius: $global-radius;
+  border: none;
+  text-transform: $button-case;
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+      text-decoration: none;
+  }
+  color: white;
+  background-color : $primary-color;
+
+  &:hover{
+    background-color: lighten($primary-color, 10%);
+    color: white;
+  }
+
+  &__icon-right {
+    @extend .padding-left;
+    float: right;
+    text-align: right;
+  }
+
+  &__icon-left {
+    @extend .padding-right;
+    float: left;
+    text-align: left;
+  }
+}
+
+  .btn__icon-right {
+    text-align: right;
+  }
+
+  .btn__text-left {
+    text-align: left;
+  }
+
+  .btn__text-right {
+    text-align: right;
+  }
+
+  // Secondary color button (ex : .btn.btn--secondary)
+  .btn--secondary {
+    background-color: $secondary-color;
+    border: none;
+    &:hover{
+      background-color: lighten($secondary-color, 10%);
+    }
+  }
+
+  // Reverse color button (ex : .btn.btn--reverse-colors)
+  .btn--reverse-colors{
+    box-sizing: border-box;
+    border: solid $secondary-color 1px;
+    color: black;
+    background-color: white;
+  }
+
+  // Large button (ex : .btn.btn--large)
+  .btn--large {
+    @extend .padding-vertical;
+  }
+
+  // Small button
+  .btn--small {
+    @extend .border--grey;
+    @extend .padding-vertical-tiny;
+    @extend .padding-horizontal-small;
+    @extend .margin-right-small;
+  }

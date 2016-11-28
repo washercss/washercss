@@ -1,0 +1,17 @@
+// A badge is an inline class to emphasize part of a text.
+.badge {
+  @extend .round;
+  padding: 0 6px;
+  background-color: #F0f0f0;
+  font-weight: bold;
+
+  // This modifier is here to change the basic color of the badge to the
+  // secondary color
+  &--colored {
+    background-color: $secondary-color;
+  }
+
+  &--white {
+    background-color: #ffffff;
+  }
+}

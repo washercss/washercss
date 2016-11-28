@@ -1,0 +1,41 @@
+.uppercase {
+  text-transform: uppercase;
+}
+
+.strong{
+  font-weight: bold;
+}
+
+.underline{
+  text-decoration: underline;
+}
+
+.round{
+  border-radius:100px;
+}
+
+.rounded {
+  min-width: 20px;
+  border-radius:25px;
+}
+
+.whole-width{
+  width: 100%;
+}
+
+.whole-height{
+  height: 100%;
+}
+
+.whole-width-max{
+  max-width: 100%;
+}
+
+.thumbnail-size{
+  height: 200px;
+  width: 180px;
+}
+
+.break-word {
+  word-wrap: break-word;
+}

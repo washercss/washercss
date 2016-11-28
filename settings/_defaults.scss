@@ -1,0 +1,52 @@
+// High-level base settings.
+$base-font-size:          16px !default;
+$base-line-height:        24px !default;
+$base-text-color:         #333 !default;
+$base-background-color:   #fff !default;
+
+/*------------------------------------*\
+    SETTINGS/GLOBAL
+\*------------------------------------*/
+
+
+/**
+ * FONTS
+ */
+$default-font-family-sans:  sans-serif !default;
+$default-font-family-serif: serif !default;
+
+/**
+ * COLORS
+ */
+$primary-color:    black !default;
+$secondary-color:  gray  !default; // Accent for Titles, Icons, Highlights, Checkboxes, etc.
+$accent-color:     green  !default; // Flat color to highlight areas
+$text-color:       black !default; // Main texts color
+$background-color: white !default; // Body BG
+$link-color:       #4571A5 !default;
+$yellow:           #FFCB54 !default;
+$grey:             #ECECEC !default;
+$dark-grey:        #CDCDCD !default;
+
+// For Solid messages
+$color-error: red !default;
+$color-notice: $secondary-color !default;
+$color-success: $secondary-color !default;
+
+
+/**
+ * CUSTOM VARIABLES
+ */
+$font-size: $base-font-size !default;
+$global-radius: 0px !default;
+$button-case: lowercase !default;
+
+
+// These variables are framework variables, sourced from variables defined
+// above. Feel free to use these variables throughout your project, but do not
+// modify or reassign them.
+$base-spacing-unit:           $base-line-height;
+$base-spacing-unit--tiny:     round($base-spacing-unit / 4);
+$base-spacing-unit--small:    round($base-spacing-unit / 2);
+$base-spacing-unit--large:    round($base-spacing-unit * 2);
+$base-spacing-unit--huge:     round($base-spacing-unit * 4);

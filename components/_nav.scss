@@ -1,0 +1,33 @@
+.nav {
+  @extend .flex;
+  @extend .max-layout-width;
+  @extend .flex-space-between;
+  @extend .flex-align-items-center;
+  flex-wrap: wrap;
+
+  &__item {
+    @extend .flex;
+    @extend .flex-align-items-center;
+    list-style: none;
+  }
+
+  &__non-flex-item {
+    list-style: none;
+  }
+
+  &__link {
+    @extend .padding-horizontal-tiny;
+  }
+
+  &__btn {
+    @extend .border--grey;
+    @extend .padding-vertical-tiny;
+    @extend .padding-horizontal;
+    @extend .margin-right-small;
+
+    &--active {
+      @extend .nav__btn;
+      color: $secondary-color;
+    }
+  }
+}

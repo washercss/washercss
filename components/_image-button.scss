@@ -1,0 +1,24 @@
+.image-button {
+  @extend .text--center;
+  @extend .border-bottom--large;
+  max-width: 276px;
+
+  &:hover {
+    border-bottom-color: $secondary-color;
+  }
+
+  &:hover &__text {
+    color: black;
+  }
+
+  &__image {
+    @extend .whole-width-max;
+  }
+
+  &__text {
+    @extend .uppercase;
+    @extend .strong;
+    @extend .padding-vertical-tiny;
+    color: lighten(black, 40%);
+  }
+}

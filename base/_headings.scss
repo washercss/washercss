@@ -1,0 +1,30 @@
+// Base headings classes (these classes are defined in helpers/font-sizes.scss)
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: normal;
+  font-weight: 400;
+}
+
+h1 {
+  @extend .alpha;
+}
+
+h2 {
+  @extend .beta;
+}
+
+h3 {
+  @extend .gamma;
+}
+
+h4 {
+  @extend .delta;
+}
+
+h5 {
+  @extend .epsilon;
+}
+
+h6 {
+  @extend .zeta;
+}

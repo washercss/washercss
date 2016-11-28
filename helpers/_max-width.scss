@@ -1,0 +1,41 @@
+.max-input-width {
+  @extend .margin-auto;
+  width: 100%;
+  max-width: 60px;
+}
+
+.max-button-width{
+  @extend .margin-auto;
+  width: 100%;
+  max-width: 250px;
+}
+
+.max-sign-width{
+  @extend .margin-auto;
+  width: 100%;
+  max-width: 400px;
+}
+
+.max-form-width{
+  @extend .margin-auto;
+  width: 100%;
+  max-width: 500px;
+}
+
+.max-readable-width {
+  @extend .margin-auto;
+  width: 100%;
+  max-width: 700px;
+}
+
+.max-layout-width {
+  @extend .margin-auto;
+  width: 100%;
+  max-width: 1145px;
+}
+
+.max-screen-width{
+  @extend .margin-auto;
+  width: 100%;
+  max-width: 1400px;
+}

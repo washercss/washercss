@@ -1,0 +1,157 @@
+/*------------------------------------*\
+  #LAYOUT
+\*------------------------------------*/
+
+/**
+ * The layout system uses `box-sizing: border-box;` and
+ * `display: inline-block;` to create an extremely powerful, flexible
+ * alternative to the traditional grid system. Combine the layout items with
+ * the widths found in `trumps.widths`.
+ */
+// Predefine the variables below in order to alter and enable specific features.
+$layout-gutter:         $base-spacing-unit !default;
+$layout-gutter--tiny:   round($layout-gutter / 4) !default;
+$layout-gutter--small:  round($layout-gutter / 2) !default;
+$layout-gutter--large:  round($layout-gutter * 2) !default;
+$layout-gutter--huge:   round($layout-gutter * 4) !default;
+
+/**
+ * Begin a layout group.
+ */
+.layout {
+  list-style: none;
+  margin:  0;
+  padding: 0;
+  margin-left: -$layout-gutter;
+  /**
+   * 1. Cause columns to stack side-by-side.
+   * 2. Space columns apart.
+   * 3. Align columns to the tops of each other.
+   * 4. Full-width unless told to behave otherwise.
+   * 5. Required to combine fluid widths and fixed gutters.
+   */
+  &__item {
+    display: inline-block; /* [1] */
+    padding-left: $layout-gutter; /* [2] */
+    vertical-align: top; /* [3] */
+    width: 100%; /* [4] */
+    box-sizing: border-box; /* [5] */
+
+  }
+  /**
+   * Layouts with tiny gutters.
+   */
+  &--tiny {
+    margin-left: -($layout-gutter--tiny);
+    > .layout__item {
+      padding-left: $layout-gutter--tiny;
+    }
+  }
+
+  /**
+   * Layouts with small gutters.
+   */
+  &--small {
+    margin-left: -($layout-gutter--small);
+    > .layout__item {
+      padding-left: $layout-gutter--small;
+    }
+  }
+  /**
+   * Layouts with large gutters.
+   */
+  &--large {
+    margin-left: -($layout-gutter--large);
+    > .layout__item {
+      padding-left: $layout-gutter--large;
+    }
+  }
+
+  /**
+   * Layouts with huge gutters.
+   */
+  &--huge {
+    margin-left: -($layout-gutter--huge);
+    > .layout__item {
+      padding-left: $layout-gutter--huge;
+    }
+  }
+
+  /**
+   * Layouts with no gutters.
+   */
+  &--flush {
+    margin-left: 0;
+    > .layout__item {
+      padding-left: 0;
+    }
+  }
+
+  /**
+   * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
+   * markup will display in order 4, 3, 2, 1 on your page.
+   */
+  &--rev {
+    direction: rtl;
+    text-align: left;
+    > .layout__item {
+      direction: ltr;
+      text-align: left;
+    }
+  }
+
+  /**
+   * Align layout items to the vertical centers of each other.
+   */
+  &--middle {
+    > .layout__item {
+      vertical-align: middle;
+    }
+  }
+
+  /**
+   * Align layout items to the vertical bottoms of each other.
+   */
+  &--bottom {
+    > .layout__item {
+      vertical-align: bottom;
+    }
+  }
+
+  /**
+   * Make the layout items fill up from the right hand side.
+   */
+  &--right {
+    text-align: right;
+    > .layout__item {
+      text-align: left;
+    }
+  }
+
+  /**
+   * Make the layout items fill up from the center outward.
+   */
+  &--center {
+    text-align: center;
+    > .layout__item {
+      text-align: left;
+    }
+  }
+
+  /**
+   * Cause layout items to take up a non-explicit amount of width.
+   */
+  &--auto {
+    > .layout__item {
+      width: auto;
+    }
+  }
+
+  &--borders {
+    border: $default-border;
+    border-left: none;
+    > .layout__item {
+      border-left: $default-border;
+    }
+  }
+}

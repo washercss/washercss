@@ -1,0 +1,81 @@
+// Border elements
+
+$default-border: solid $primary-color 1px;
+
+.border{
+  border: $default-border;
+}
+
+.border--large{
+  border-width: 0.5rem;
+}
+
+.border--primary{
+  border-color: $primary-color;
+}
+
+.border--secondary{
+  border: solid 1px $secondary-color;
+}
+
+.border--white{
+  border-color: white;
+}
+
+.border--grey {
+  border: solid 1px #595959;
+}
+
+.border--dark-grey {
+  border: solid 1px $dark-grey;
+}
+
+.border--grey-lighter {
+  border: solid 2px #e6e6e6;
+}
+
+.border--lighter-small {
+  border: solid 1px #e6e6e6;
+}
+
+.border--none-palm{
+  @include mq($until: mobile){
+    border: none;
+  }
+}
+
+.border--heavy-bg{
+  border-color: darken($accent-color, 20%);
+}
+
+.border-left--grey{
+  border-left: solid 1px lighten($primary-color, 70%);
+}
+
+.border-right--grey{
+  border-right: solid 1px lighten($primary-color, 70%);
+}
+
+.border-right--white {
+  border-right: solid 2px white;
+}
+
+.border-bottom{
+  border-bottom: solid 1px lighten($text-color, 40%);
+}
+
+.border-bottom--large{
+  border-bottom: solid 4px lighten($text-color, 70%);
+}
+
+.border-bottom--white {
+  border-bottom: solid 1px white;
+}
+
+.border-top-palm{
+  @include mq($until: mobile){
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+  }
+}

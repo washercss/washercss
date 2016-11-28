@@ -1,0 +1,9 @@
+// This class added to the body tag and is used to define the basic font-family,
+// basic color and basic font-size of the inside of the body.
+// It's also really cool, because you can do without it if you need to do custom
+// pages that are not in this color / font "theme"
+.main-body{
+  font-family:      $default-font-family-sans;
+  color:            $text-color;
+  font-size:        $font-size;
+}

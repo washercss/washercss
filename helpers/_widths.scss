@@ -1,0 +1,152 @@
+/* ==========================================================================
+   #WIDTHS
+   ========================================================================== */
+
+/**
+ * washercss generates a series of utility classes that give a fluid width to
+ * whichever element they’re applied, e.g.:
+ *
+ *   <img src="" alt="" class="width-1-2" />
+ *
+ * These classes are most commonly used in conjunction with our layout system,
+ * e.g.:
+ *
+ *   <div class="layout__item  width-1-2">
+ *
+ * By default, washercss will also generate responsive variants of each of these
+ * classes by using your Sass MQ configuration, e.g.:
+ *
+ *   <div class="layout__item  width-1-1  width-1-2-lap-and-up  width-1-3-palm">
+ *
+ * Optionally, washercss can generate offset classes which can push and pull
+ * elements left and right by a specified amount, e.g.:
+ *
+ *   <div class="layout__item  width-2-3  pull-1-3">
+ *
+ * This is useful for making very granular changes to the rendered order of
+ * items in a layout.
+ *
+ * N.B. This option is turned off by default.
+ */
+
+
+
+
+
+// Which fractions would you like in your grid system(s)? By default, washercss
+// provides you fractions of one whole, halves, thirds, quarters and fifths,
+// e.g.:
+//
+//   .width-1-2
+//   .width-2-5
+//   .width-3-4
+//   .width-2-3
+
+$washer-fractions: 1 2 3 4 5 !default;
+
+
+
+
+
+// Optionally, washercss can generate classes to offset items by a certain width.
+// Would you like to generate these types of class as well? E.g.:
+//
+//   .push-1-3
+//   .pull-2-4
+//   .pull-1-5
+//   .push-2-3
+
+$washer-offsets: false !default;
+
+
+
+
+
+// A mixin to spit out our width classes. Pass in the columns we want the widths
+// to have, and an optional suffix for responsive widths. E.g. to create thirds
+// and quarters for a small breakpoint:
+//
+// @include widths(3 4, -sm);
+
+@mixin washer-widths($columns, $breakpoint: null) {
+
+  $b: get-val($breakpoint);
+
+  // Loop through the number of columns for each denominator of our fractions.
+  @each $denominator in $columns {
+
+    // Begin creating a numerator for our fraction up until we hit the
+    // denominator.
+    @for $numerator from 1 through $denominator {
+
+      // Build a class in the format `.width-3-4[@<breakpoint>]`.
+      .width-#{$numerator}-#{$denominator}#{$b} {
+        width: ($numerator / $denominator) * 100% !important;
+      }
+
+      @if ($washer-offsets == true) {
+
+        /**
+        * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+        */
+
+        // Build a class in the format `.push-1-2[-<breakpoint>]`.
+        .push-#{$numerator}-#{$denominator}#{$b} {
+          position: relative;
+          right: auto; /* [1] */
+          left: ($numerator / $denominator) * 100% !important;
+        }
+
+        // Build a class in the format `.pull-5-6[-<breakpoint>]`.
+        .pull-#{$numerator}-#{$denominator}#{$b} {
+          position: relative;
+          right: ($numerator / $denominator) * 100% !important;
+          left: auto; /* [1] */
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+
+
+
+/**
+ * A series of width helper classes that you can use to size things like grid
+ * systems. Classes take a fraction-like format (e.g. `.width-2-3`). Use these in
+ * your markup:
+ *
+ * <div class="width-7-12">
+ *
+ * The following will generate widths helper classes based on the fractions
+ * defined in the `$washer-fractions` list.
+ */
+
+@include washer-widths($washer-fractions);
+
+
+
+
+/**
+ * If we’re using Sass-MQ, automatically generate grid system(s) for each of our
+ * defined breakpoints, and give them a Responsive Suffix, e.g.:
+ *
+ * <div class="width-3-12-lap-and-up">
+ */
+//$mq-breakpoints: $breakpoints;
+
+@if (variable-exists(grid-values)) {
+
+  @each $washer-bp-name, $washer-bp-value in $grid-values {
+
+    @include mq($from: nth($washer-bp-value, 1), $until: nth($washer-bp-value, 2)) {
+      @include washer-widths($washer-fractions, $washer-bp-name);
+    }
+
+  }
+
+}

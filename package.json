@@ -2,7 +2,7 @@
   "name": "washercss",
   "version": "1.0.0",
   "description": "Washer Css is a BEM, clean, simple, easy, lightweight, customizable, themable css framework",
-  "main": "example.main.scss",
+  "main": "main.scss",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/washercss/washercss.git"

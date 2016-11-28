@@ -1,0 +1,53 @@
+.background--white{
+  background-color: white;
+}
+
+.background--grey{
+  background-color: $grey;
+}
+
+.background--dark-grey{
+  background-color: $dark-grey;
+}
+
+.background--yellow {
+  background-color: $yellow;
+}
+
+.background--yellow-opacity {
+  background-color: rgba($secondary-color, 0.8);
+}
+
+.background--gold{
+  background-color: gold;
+}
+
+.background--silver{
+  background-color: silver;
+}
+
+.background--bronze{
+  background-color: saddlebrown;
+}
+
+.background--light-palm{
+  @include mq($until: mobile){
+    background-color: $accent-color;
+  }
+}
+
+.background--light{
+  background-color: $accent-color;
+}
+
+.background--primary{
+  background-color: $primary-color;
+}
+
+.background--secondary{
+  background-color: $secondary-color;
+}
+
+.background--grey-light {
+  background-color: #f7f7f7;
+}

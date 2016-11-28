@@ -1,0 +1,31 @@
+// Some basic error styles.
+.errors{
+  background-color: $color-error;
+  color: white;
+}
+
+// input filed form error
+.error{
+  position: relative;
+  top: 12px;
+  @extend .errors;
+  @extend .padding-vertical-tiny;
+  @extend .padding-horizontal-small;
+
+  &::before{
+    position: absolute;
+    top: -6px;
+    left: 6px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 6px 6px 6px;
+    border-color: transparent transparent $color-error transparent;
+  }
+}
+
+.notice{
+  background-color: $color-notice;
+  color: black;
+}

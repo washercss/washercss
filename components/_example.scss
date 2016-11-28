@@ -1,0 +1,7 @@
+.example {
+  @extend .padding;
+}
+
+.help-section {
+  @extend .padding-vertical;
+}

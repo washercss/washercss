@@ -1,0 +1,24 @@
+// This base style makes the basic link tag more consistant in terms of style
+// by applying the $link-color and removing the text-decoration
+.link {
+  color: $link-color;
+  text-decoration: none;
+  transition: all .4s ease-in;
+  &:hover{
+    color: lighten($link-color, 10%);
+  }
+  &:active, &:focus {
+    outline: none;
+  }
+}
+
+.link.white {
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+.not-active{
+  pointer-events: none;
+  cursor: default;
+}

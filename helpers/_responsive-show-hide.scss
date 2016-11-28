@@ -1,0 +1,19 @@
+.show-on-palm{
+  display: none;
+  @include mq($until: tablet) {
+    display: block;
+  }
+}
+
+.hide-on-palm{
+  @include mq($until: tablet) {
+    display: none;
+  }
+}
+
+.hide-on-lap-and-up{
+  display: none;
+  @include mq($until: tablet) {
+    display: block;
+  }
+}

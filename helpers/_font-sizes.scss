@@ -1,0 +1,85 @@
+// responsive font sizes classes Helpers (.biggest, .alpha, .beta, .gamma,
+// .delta, .epsilon, .zeta, .eta, .theta, .iota)
+
+.biggest {
+  font-size: 4rem;
+  @include mq($until: tablet) {
+    font-size: 3.5rem;
+  }
+}
+
+.alpha {
+  font-size: 2.4rem;
+  @include mq($until: tablet) {
+    font-size: 2.0rem;
+  }
+}
+
+.beta {
+  font-size: 2.2rem;
+  @include mq($until: tablet) {
+    font-size: 1.8rem;
+  }
+}
+
+.gamma {
+  font-size: 1.6rem;
+  @include mq($until: tablet) {
+    font-size: 1.4rem;
+  }
+}
+
+.delta {
+  font-size: 1.5rem;
+  @include mq($until: tablet) {
+    font-size: 1.3rem;
+  }
+}
+
+.epsilon {
+  font-size: 1.3rem;
+  @include mq($until: tablet) {
+    font-size: 1.1rem;
+  }
+}
+
+.zeta {
+  font-size: 1.1rem;
+  @include mq($until: tablet) {
+    font-size: 0.85rem;
+  }
+}
+
+.eta {
+  font-size: 1.05rem;
+  @include mq($until: tablet) {
+    font-size: 0.80rem;
+  }
+}
+
+.theta {
+  font-size: 0.85rem;
+  @include mq($until: tablet) {
+    font-size: 0.75rem;
+  }
+}
+
+.iota {
+  font-size: 0.80rem;
+  @include mq($until: tablet) {
+    font-size: 0.70rem;
+  }
+  @include mq($until: mobile) {
+    font-size: 0.80rem;
+  }
+}
+
+.kappa {
+  font-size: 0.50rem;
+  @include mq($until: tablet) {
+    font-size: 0.40rem;
+  }
+  @include mq($until: mobile) {
+    font-size: 0.50rem;
+  }
+}

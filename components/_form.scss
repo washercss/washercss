@@ -1,0 +1,77 @@
+// Basic style to have every simple_form input except radio and checkboxes 100%
+// width
+.simple_form input:not([type='checkbox']):not([type='radio']) {
+  width: 100%;
+}
+
+// .npt component : this component is a good looking input tag. with hover
+.npt {
+  @extend .padding-vertical-tiny;
+  @extend .padding-horizontal-small;
+  width: 100%;
+  font-size: 14px;
+  border: solid 1px #bbb;
+  line-height: 1.4;
+
+  &:disabled {
+    background-color: $grey;
+  }
+
+  &:focus {
+    border-color: $secondary-color;
+    outline: none;
+  }
+
+  &.npt--search {
+    @extend .padding-left;
+  }
+}
+
+  .npt--inline {
+    width: inherit;
+    @extend .margin-left-tiny;
+  }
+
+  .npt--transparent {
+    border: solid 1px transparent;
+  }
+
+  .npt--border-big {
+    border: solid 2px #e6e6e6;
+  }
+
+  .npt--width-small{
+    width: auto;
+    max-width: 70px;
+  }
+
+.npt-iconified {
+  @extend .layout;
+  @extend .layout--flush;
+  @extend .layout--middle;
+}
+
+  .npt-iconified__icon {
+    @extend .layout__item;
+    @extend .width-1-5;
+    @extend .valign;
+    @extend .text--center;
+    @extend .delta;
+  }
+
+  .npt-iconified__npt {
+    @extend .layout__item;
+    @extend .width-4-5;
+    @extend .valign;
+  }
+
+.lbl {
+  font-weight: bold;
+}
+
+// .no-arrows class to remove the + and - buttons on a "type number" input
+input[type=number].no-arrows::-webkit-inner-spin-button,
+input[type=number].no-arrows::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

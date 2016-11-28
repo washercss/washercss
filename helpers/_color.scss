@@ -1,0 +1,25 @@
+// This file is here to declare some colors you want to inherit from
+
+.white {
+  color: white;
+}
+
+.dark-grey {
+  color: darken($text-color, 30%);
+}
+
+.grey {
+  color: #979797;
+}
+
+.primary {
+  color: $primary-color;
+}
+
+.secondary {
+  color: $secondary-color;
+}
+
+.accent {
+  color: $accent-color;
+}
