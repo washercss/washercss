@@ -1,0 +1,22 @@
+{
+  "name": "washercss",
+  "version": "1.0.0",
+  "homepage": "https://github.com/washercss/washercss",
+  "authors": [
+    "Thibaut Assus <thibaut@milesrock.com>",
+    "Chloé Roger <chloe@bemioz.com>",
+    "Guillaume Boudon <guillaumeboudon@gmail.com>"
+  ],
+  "description": "Washer Css is a BEM, clean, simple, easy, lightweight, customizable, themable css framework",
+  "main": "main.scss",
+  "keywords": [
+    "css",
+    "sass",
+    "responsive",
+    "bem"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "sass-mq": "^3.2.9"
+  }
+}
